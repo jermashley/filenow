@@ -405,6 +405,11 @@ select {
 
   color: hsla(210, 10%, 25%, 1);
 
+  > option {
+    background-color: hsla(210, 100%, 100%, 1);
+    color: hsla(210, 10%, 25%, 1);
+  }
+
   &.efile {
     border: 1px solid rgba(16, 120, 192, 0.45);
     background-color: rgba(16, 120, 192, 0.25);
