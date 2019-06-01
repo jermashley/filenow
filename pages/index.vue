@@ -15,7 +15,7 @@
             class="efile"
             @change="goToUrl(eFileLink)"
           >
-            <option :value="eFileLink" disabled>Pick one</option>
+            <option :value="eFileLink" disabled>Select your state</option>
             <option
               v-for="link in eFileLinks"
               :key="link.href"
@@ -51,7 +51,7 @@
             class="reSearch"
             @change="goToUrl(reSearchLink)"
           >
-            <option :value="reSearchLink" disabled>Pick one</option>
+            <option :value="reSearchLink" disabled>Select your state</option>
             <option
               v-for="link in reSearchLinks"
               :key="link.href"
@@ -87,7 +87,7 @@
             class="guideFile"
             @change="goToUrl(guideFileLink)"
           >
-            <option :value="guideFileLink" disabled>Pick one</option>
+            <option :value="guideFileLink" disabled>Select your state</option>
             <option
               v-for="link in guideFileLinks"
               :key="link.href"
