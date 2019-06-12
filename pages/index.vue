@@ -282,7 +282,7 @@ export default {
         },
         {
           name: `New Mexico`,
-          href: `https://newhampshire.tylerhost.net/ofsweb`
+          href: `https://newmexico.tylerhost.net/ofsweb`
         },
         {
           name: `North Dakota`,
