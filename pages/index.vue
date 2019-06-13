@@ -16,7 +16,12 @@
             @change="goToUrl(eFileLink)"
           >
             <option :value="eFileLink" disabled>Select your state</option>
-            <option v-for="link in eFileLinks" :key="link.href" :value="link.href">{{ link.name }}</option>
+            <option
+              v-for="link in eFileLinks"
+              :key="link.href"
+              :value="link.href"
+              >{{ link.name }}</option
+            >
           </select>
 
           <svg
@@ -51,7 +56,8 @@
               v-for="link in reSearchLinks"
               :key="link.href"
               :value="link.href"
-            >{{ link.name }}</option>
+              >{{ link.name }}</option
+            >
           </select>
 
           <svg
@@ -86,7 +92,8 @@
               v-for="link in guideFileLinks"
               :key="link.href"
               :value="link.href"
-            >{{ link.name }}</option>
+              >{{ link.name }}</option
+            >
           </select>
 
           <svg
@@ -108,7 +115,7 @@
 </template>
 
 <script>
-export default {z
+export default {
   head() {
     return {
       title: `FileNow.me`,
