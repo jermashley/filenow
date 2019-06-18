@@ -114,7 +114,7 @@
 
     <form>
       <section>
-        <label for="riscap">Rhode Island</label>
+        <label for="riscap">Rhode Island Supreme Court Attorney Portal</label>
         <div class="selectGroup">
           <select
             id="riscap"
@@ -173,7 +173,7 @@ export default {
       riscapLink: null,
       riscapLinks: [
         {
-          name: `Rhode Island Supreme Court Attorney Portal`,
+          name: `Rhode Island`,
           href: `https://rhodeisland.tylerhost.net/TylerFamis/UserAccount/Login`
         }
       ],
