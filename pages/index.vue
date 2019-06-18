@@ -114,7 +114,7 @@
 
     <form>
       <section>
-        <label for="riscap">Rhode Island Supreme Court Attorney Portal</label>
+        <label for="riscap">Rhode Island</label>
         <div class="selectGroup">
           <select
             id="riscap"
