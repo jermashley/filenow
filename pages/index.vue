@@ -1,7 +1,7 @@
 <template>
   <main>
     <header>
-      <h1>FileNow.me</h1>
+      <h1>Odyssey Sites</h1>
     </header>
 
     <form>
