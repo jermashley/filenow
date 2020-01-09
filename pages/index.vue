@@ -114,6 +114,42 @@
 
     <form>
       <section>
+        <label for="riscap">Rhode Island Supreme Court Attorney Portal</label>
+        <div class="selectGroup">
+          <select
+            id="riscap"
+            v-model="riscapLink"
+            name="riscap"
+            class="riscap"
+            @change="goToUrl(riscapLink)"
+          >
+            <option :value="riscapLink" disabled>Select your state</option>
+            <option
+              v-for="link in riscapLinks"
+              :key="link.href"
+              :value="link.href"
+              >{{ link.name }}</option
+            >
+          </select>
+
+          <svg
+            width="12"
+            height="7"
+            viewBox="0 0 12 7"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M6.11328 6.80078C6.32812 7.01562 6.62891 7.01562 6.84375 6.80078L11.8281 1.77344C12.043 1.55859 12.043 1.21484 11.8281 1.04297L11.5273 0.742188C11.3125 0.527344 11.0117 0.527344 10.7969 0.742188L6.5 5.125L2.16016 0.699219C1.94531 0.527344 1.64453 0.527344 1.42969 0.699219L1.12891 1.04297C0.914062 1.21484 0.914062 1.55859 1.12891 1.77344L6.11328 6.80078Z"
+              fill="white"
+            ></path>
+          </svg>
+        </div>
+      </section>
+    </form>
+
+    <form>
+      <section>
         <label for="riscap">Support</label>
         <div class="selectGroup">
           <select
@@ -123,7 +159,7 @@
             class="riscap"
             @change="goToUrl(supportLink)"
           >
-            <option :value="supportLink" disabled>Select your state</option>
+            <option :value="supportLink" disabled>Select one</option>
             <option
               v-for="link in supportLinks"
               :key="link.href"
