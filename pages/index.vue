@@ -401,7 +401,7 @@ export default {
           href: `https://virginia.tylerhost.net/ofsweb`
         }
       ],
-      support: [
+      supportLinks: [
         {
           name: `Go To Assist`,
           href: `https://gotoassist.me`
