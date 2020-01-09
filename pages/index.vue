@@ -571,18 +571,18 @@ select {
   }
 
   &.support {
-    border: 1px solid rgba(276, 31, 37, 0.45);
-    background-color: rgba(276, 31, 37, 0.25);
+    border: 1px solid rgba(101, 66, 124, 0.45);
+    background-color: rgba(101, 66, 124, 0.25);
 
     &:hover {
-      border: 1px solid rgba(276, 31, 37, 0.95);
-      background-color: rgba(276, 31, 37, 0.75);
+      border: 1px solid rgba(101, 66, 124, 0.95);
+      background-color: rgba(101, 66, 124, 0.75);
       color: hsla(210, 100%, 100%, 1);
     }
 
     &:focus {
-      border: 1px dashed rgba(276, 31, 37, 0.25);
-      background-color: rgba(276, 31, 37, 0.75);
+      border: 1px dashed rgba(101, 66, 124, 0.25);
+      background-color: rgba(101, 66, 124, 0.75);
       color: hsla(210, 100%, 100%, 1);
     }
   }
