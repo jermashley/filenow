@@ -114,18 +114,18 @@
 
     <form>
       <section>
-        <label for="riscap">Rhode Island Supreme Court Attorney Portal</label>
+        <label for="riscap">Support</label>
         <div class="selectGroup">
           <select
             id="riscap"
-            v-model="riscapLink"
+            v-model="supportLink"
             name="riscap"
             class="riscap"
-            @change="goToUrl(riscapLink)"
+            @change="goToUrl(supportLink)"
           >
-            <option :value="riscapLink" disabled>Select your state</option>
+            <option :value="supportLink" disabled>Select your state</option>
             <option
-              v-for="link in riscapLinks"
+              v-for="link in supportLinks"
               :key="link.href"
               :value="link.href"
               >{{ link.name }}</option
@@ -171,6 +171,7 @@ export default {
       reSearchLink: null,
       guideFileLink: null,
       riscapLink: null,
+      supportLink: null,
       riscapLinks: [
         {
           name: `Rhode Island`,
@@ -271,14 +272,6 @@ export default {
       ],
       eFileLinks: [
         {
-          name: `Go To Assist`,
-          href: `https://gotoassist.me`
-        },
-        {
-          name: `BomGar -- Support`,
-          href: `https://nwsupport.tylertech.com`
-        },
-        {
           name: `California`,
           href: `https://california.tylerhost.net/OfsWeb`
         },
@@ -371,6 +364,20 @@ export default {
           name: `Virginia`,
           href: `https://virginia.tylerhost.net/ofsweb`
         }
+      ],
+      support: [
+        {
+          name: `Go To Assist`,
+          href: `https://gotoassist.me`
+        },
+        {
+          name: `BomGar`,
+          href: `https://nwsupport.tylertech.com`
+        },
+        {
+          name: `IP Chicken`,
+          href: `https://ipchicken.com`
+        },
       ]
     }
   },
@@ -523,6 +530,23 @@ select {
     &:focus {
       border: 1px dashed rgba(237, 161, 47, 0.25);
       background-color: rgba(237, 161, 47, 0.75);
+      color: hsla(210, 100%, 100%, 1);
+    }
+  }
+
+  &.support {
+    border: 1px solid rgba(276, 31, 37, 0.45);
+    background-color: rgba(276, 31, 37, 0.25);
+
+    &:hover {
+      border: 1px solid rgba(276, 31, 37, 0.95);
+      background-color: rgba(276, 31, 37, 0.75);
+      color: hsla(210, 100%, 100%, 1);
+    }
+
+    &:focus {
+      border: 1px dashed rgba(276, 31, 37, 0.25);
+      background-color: rgba(276, 31, 37, 0.75);
       color: hsla(210, 100%, 100%, 1);
     }
   }
