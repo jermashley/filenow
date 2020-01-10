@@ -150,13 +150,13 @@
 
     <form>
       <section>
-        <label for="riscap">Support</label>
+        <label for="support">Support</label>
         <div class="selectGroup">
           <select
-            id="riscap"
+            id="support"
             v-model="supportLink"
-            name="riscap"
-            class="riscap"
+            name="support"
+            class="support"
             @change="goToUrl(supportLink)"
           >
             <option :value="supportLink" disabled>Select one</option>
