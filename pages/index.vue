@@ -414,6 +414,10 @@ export default {
           name: `IP Chicken`,
           href: `https://ipchicken.com`
         },
+        {
+          name: `BrightCloud®`,
+          href: `https://www.brightcloud.com/`
+        },
       ]
     }
   },
