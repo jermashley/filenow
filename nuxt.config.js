@@ -1,25 +1,29 @@
+require(`dotenv`).config()
+
 export default {
-  mode: 'spa',
+  mode: `spa`,
   /*
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || '',
+    title: process.env.npm_package_name || `FileNow.me`,
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { charset: `utf-8` },
+      { name: `viewport`, content: `width=device-width, initial-scale=1` },
       {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || ''
-      }
+        hid: `description`,
+        name: `description`,
+        content:
+          process.env.npm_package_description ||
+          `Website for helping you get to those important legal sites you can't remember the address for.`,
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: `icon`, type: `image/x-icon`, href: `/favicon.ico` }],
   },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
+  loading: { color: `#7D8FE8` },
   /*
    ** Global CSS
    */
@@ -32,21 +36,14 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    // Doc: https://github.com/nuxt-community/eslint-module
-    '@nuxtjs/eslint-module',
-    // Doc: https://github.com/nuxt-community/stylelint-module
-    '@nuxtjs/stylelint-module',
-    // Doc: https://github.com/nuxt-community/nuxt-tailwindcss
-    '@nuxtjs/tailwindcss'
+    `@nuxtjs/eslint-module`,
+    `@nuxtjs/stylelint-module`,
+    `@nuxtjs/tailwindcss`,
   ],
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    '@nuxtjs/pwa',
-    // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
-  ],
+  modules: [`@nuxtjs/pwa`, `@nuxtjs/dotenv`],
   /*
    ** Build configuration
    */
@@ -54,6 +51,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {}
-  }
+    extend(config, ctx) {},
+  },
 }
