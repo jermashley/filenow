@@ -1,0 +1,126 @@
+<template>
+  <button :class="{ active: active }" @click="toggle()">
+    <span>{{ title }}</span>
+
+    <span ref="icon" class="icon">
+      <FontAwesomeIcon :icon="[`fad`, `angle-right`]" fixed-width />
+    </span>
+  </button>
+</template>
+
+<script>
+import { mapGetters } from 'vuex'
+import anime from 'animejs'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faAngleRight } from '@fortawesome/pro-duotone-svg-icons'
+
+library.add(faAngleRight)
+
+export default {
+  name: `CategoryButton`,
+
+  components: {
+    FontAwesomeIcon: () =>
+      import(`@fortawesome/vue-fontawesome`).then(
+        ({ FontAwesomeIcon }) => FontAwesomeIcon
+      ),
+  },
+
+  props: {
+    title: {
+      type: String,
+      default: null,
+    },
+  },
+
+  data() {
+    return {
+      active: false,
+    }
+  },
+
+  computed: {
+    ...mapGetters({
+      activeCategory: `activeCategory`,
+    }),
+  },
+
+  watch: {
+    activeCategory() {
+      const icon = this.$refs.icon
+
+      if (this.activeCategory !== this.title) {
+        this.active = false
+
+        anime({
+          targets: icon,
+          rotate: 0,
+          duration: 250,
+          easing: `easeInOutQuad`,
+        })
+      }
+    },
+  },
+
+  methods: {
+    toggle() {
+      const icon = this.$refs.icon
+
+      this.active = !this.active
+
+      this.active
+        ? this.$store.commit(`setActiveCategory`, this.title)
+        : this.$store.commit(`setActiveCategory`, null)
+
+      anime({
+        targets: icon,
+        rotate: 180,
+        duration: 250,
+        easing: `easeInOutQuad`,
+      })
+    },
+  },
+}
+</script>
+
+<style lang="scss" scoped>
+button {
+  color: rgba(54, 57, 73, 1);
+  font-size: 1.25rem;
+  background-color: rgba(255, 255, 255, 1);
+  border-top: 1px solid rgba(232, 235, 252, 1);
+  border-bottom: 1px solid rgba(232, 235, 252, 1);
+  transition: 250ms ease-in-out;
+
+  @apply w-full px-10 py-6 flex flex-row items-center justify-between text-left;
+
+  .icon {
+    margin: 0 0 0 2.5rem;
+    opacity: 0;
+    transition: 250ms ease-in-out;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: rgba(239, 241, 251, 1);
+    outline: none;
+    transition: 250ms ease-in-out;
+
+    .icon {
+      opacity: 1;
+      transition: 250ms ease-in-out;
+    }
+  }
+
+  &.active {
+    color: rgba(248, 249, 251, 1);
+    background-color: rgba(125, 143, 232, 1);
+    transition: 350ms ease-in-out;
+
+    .icon {
+      opacity: 1;
+      transition: 250ms ease-in-out;
+    }
+  }
+}
+</style>

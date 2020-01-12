@@ -221,7 +221,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        `Jost`,
+        `Lato`,
         `Inter`,
         `-apple-system`,
         `BlinkMacSystemFont`,
