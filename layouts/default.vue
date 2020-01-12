@@ -9,7 +9,8 @@ div {
   width: 100%;
   height: 100vh;
   min-height: 100vh;
-  padding: 2rem 1rem;
+  margin: 0;
+  padding: 0;
   background-color: #f8f9fb;
 }
 </style>

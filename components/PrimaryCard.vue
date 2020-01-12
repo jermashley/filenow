@@ -91,6 +91,7 @@ section {
   z-index: 500;
   width: 100%;
   max-width: 540px;
+  margin: 0 1rem;
   padding: 3rem 0 3.5rem;
   background-color: rgba(254, 254, 254, 1);
   border: 1px solid rgba(232, 235, 252, 1);
@@ -103,6 +104,10 @@ section {
   opacity: 0;
 
   @apply mx-auto;
+
+  @screen sm {
+    margin: 0;
+  }
 }
 
 h1 {
