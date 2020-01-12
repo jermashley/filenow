@@ -34,9 +34,15 @@ main {
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
-  align-items: center;
+  align-items: start;
+  padding: 2rem 0 0;
 
   @apply max-w-4xl mx-auto h-full overflow-y-auto;
+
+  @screen sm {
+    align-items: center;
+    padding: 0;
+  }
 
   > div {
     position: relative;
