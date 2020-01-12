@@ -48,7 +48,11 @@ main {
     position: relative;
     width: fit-content;
     height: fit-content;
-    margin: 0 auto;
+    margin: 0 1rem;
+
+    @screen sm {
+      margin: 0 auto;
+    }
   }
 }
 </style>
