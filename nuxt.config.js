@@ -6,19 +6,17 @@ export default {
    ** Headers of the page
    */
   head: {
-    title: process.env.npm_package_name || `FileNow.me`,
+    title: `FileNow.me`,
     meta: [
       { charset: `utf-8` },
       { name: `viewport`, content: `width=device-width, initial-scale=1` },
       {
         hid: `description`,
         name: `description`,
-        content:
-          process.env.npm_package_description ||
-          `Website for helping you get to those important legal sites you can't remember the address for.`,
+        content: `Website for helping you get to those important legal sites you can't remember the address for.`,
       },
     ],
-    link: [{ rel: `icon`, type: `image/x-icon`, href: `/favicon.ico` }],
+    link: [{ rel: `icon`, type: `image/x-icon`, href: `/favicon.png` }],
   },
   /*
    ** Customize the progress-bar color
