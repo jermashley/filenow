@@ -100,10 +100,9 @@ section {
   top: 0;
   right: 50%;
   z-index: 400;
-  display: grid;
-  grid-gap: 1.5rem;
-  grid-template-rows: auto 1fr;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: flex-start;
   width: 22.5rem;
   height: calc(100% - 4rem);
   margin: 2rem 0;
@@ -122,7 +121,7 @@ section {
 
   @screen sm {
     right: 0;
-    padding: 1.5rem 0 1.5rem 3rem;
+    padding: 1.5rem 0 0 3rem;
     transform: translateX(0);
   }
 }
@@ -132,9 +131,10 @@ button {
   flex-flow: row nowrap;
   align-items: center;
   justify-content: flex-start;
-  width: fit-content;
-  margin: 0 0 0 2.5rem;
-  padding: 0;
+
+  /* width: fit-content; */
+  margin: 0 0 calc(1.5rem - 10px) 2.5rem;
+  padding: 0 0 10px;
   color: rgba(54, 57, 73, 1);
   font-weight: 600;
   font-size: 0.825rem;

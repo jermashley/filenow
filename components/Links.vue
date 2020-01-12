@@ -27,7 +27,10 @@ export default {
 
 <style lang="scss" scoped>
 div {
-  height: 100%;
+  display: grid;
+  flex-grow: 1;
+  grid-template-rows: auto;
+  grid-template-columns: 1fr;
   overflow-y: auto;
 }
 </style>
