@@ -36,7 +36,7 @@ main {
   grid-template-columns: 1fr;
   align-items: center;
 
-  @apply max-w-4xl mx-auto min-h-screen h-full;
+  @apply max-w-4xl mx-auto h-full overflow-y-auto;
 
   > div {
     position: relative;

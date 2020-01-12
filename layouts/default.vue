@@ -7,7 +7,7 @@
 <style lang="scss" scoped>
 div {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   min-height: 100vh;
   padding: 2rem 1rem;
   background-color: #f8f9fb;
@@ -30,5 +30,6 @@ div {
 body {
   -webkit-font-smoothing: subpixel-antialiased;
   text-rendering: optimizeLegibility;
+  height: 100vh;
 }
 </style>
