@@ -27,10 +27,10 @@ export default {
 
 <style lang="scss" scoped>
 div {
-  display: grid;
+  display: flex;
+  flex-flow: column nowrap;
   flex-grow: 1;
-  grid-template-rows: auto;
-  grid-template-columns: 1fr;
+  justify-content: flex-start;
   overflow-y: auto;
 }
 </style>
