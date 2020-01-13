@@ -37,7 +37,7 @@ main {
   align-items: start;
   padding: 2rem 0 0;
 
-  @apply max-w-4xl mx-auto h-full overflow-y-auto;
+  @apply max-w-4xl mx-auto h-full;
 
   @screen sm {
     align-items: center;
