@@ -1,5 +1,6 @@
 <template>
   <main>
+    <ThemeToggle />
     <div>
       <PrimaryCard :tranlsate-value="translateValue" />
       <SecondaryCard @translate-value="setTranslateValue" />
@@ -12,6 +13,7 @@ export default {
   components: {
     PrimaryCard: () => import(`~/components/PrimaryCard`),
     SecondaryCard: () => import(`~/components/SecondaryCard`),
+    ThemeToggle: () => import(`~/components/ThemeToggle`),
   },
 
   data() {
@@ -31,6 +33,7 @@ export default {
 
 <style lang="scss" scoped>
 main {
+  position: relative;
   display: grid;
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;

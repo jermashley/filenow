@@ -95,7 +95,7 @@ section {
   max-width: 540px;
   margin: 0 1rem;
   padding: 0 0 3.5rem;
-  background-color: rgba(254, 254, 254, 1);
+  background-color: var(--brandItemBackground);
   border: 1px solid var(--brandItemBorder);
   border-bottom: 8px solid var(--brandAccent);
   border-radius: 0.5rem;

@@ -11,7 +11,7 @@ div {
   min-height: 100vh;
   margin: 0;
   padding: 0;
-  background-color: #f8f9fb;
+  background-color: var(--bodyBackground);
 }
 </style>
 
@@ -34,7 +34,7 @@ div {
   --brandText: rgba(54, 58, 73, 1);
   --brandHoverText: rgba(254, 254, 254, 1);
   --brandItemBackground: rgba(254, 254, 254, 1);
-  --brandItemBorder: rgba(254, 254, 254, 1);
+  --brandItemBorder: rgba(239, 241, 251, 1);
   --brandAccent: rgba(192, 32, 51, 1);
   --bodyBackground: rgba(248, 249, 251, 1);
 }
@@ -43,5 +43,6 @@ body {
   -webkit-font-smoothing: subpixel-antialiased;
   text-rendering: optimizeLegibility;
   height: 100vh;
+  background-color: var(--bodyBackground);
 }
 </style>

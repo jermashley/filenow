@@ -108,7 +108,7 @@ section {
   margin: 2rem 0;
   padding: 1.5rem 0 0;
   overflow: hidden;
-  background-color: rgba(254, 254, 254, 1);
+  background-color: var(--brandItemBackground);
   border: 1px solid var(--brandItemBorder);
   border-radius: 0.5rem;
   box-shadow:

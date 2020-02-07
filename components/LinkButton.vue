@@ -37,9 +37,9 @@ export default {
 
 <style lang="scss" scoped>
 a {
-  color: rgba(54, 57, 73, 1);
+  color: var(--brandText);
   font-size: 1.125rem;
-  background-color: rgba(255, 255, 255, 1);
+  background-color: var(--brandItemBackground);
   transition: 250ms ease-in-out;
 
   @apply w-full px-10 py-2 flex flex-row items-center justify-between;
@@ -52,7 +52,7 @@ a {
 
   &:hover,
   &:focus {
-    background-color: rgba(239, 241, 251, 1);
+    background-color: var(--brandLightest);
     outline: none;
     transition: 250ms ease-in-out;
 
