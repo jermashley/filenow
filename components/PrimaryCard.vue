@@ -1,6 +1,8 @@
 <template>
   <section ref="card">
-    <h1>Odyssey Sites</h1>
+    <header>
+      <img src="/esolutions.png" alt="eSoutions quick links banner." />
+    </header>
 
     <Categories />
   </section>
@@ -92,7 +94,7 @@ section {
   width: 100%;
   max-width: 540px;
   margin: 0 1rem;
-  padding: 3rem 0 3.5rem;
+  padding: 0 0 3.5rem;
   background-color: rgba(254, 254, 254, 1);
   border: 1px solid var(--brandItemBorder);
   border-bottom: 8px solid var(--brandAccent);
@@ -107,6 +109,18 @@ section {
 
   @screen sm {
     margin: 0;
+  }
+}
+
+header {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0.5rem 0.5rem 0 0;
+
+  img {
+    width: 100%;
+    height: auto;
   }
 }
 
