@@ -85,11 +85,11 @@ export default {
 
 <style lang="scss" scoped>
 button {
-  color: rgba(54, 57, 73, 1);
+  color: var(--brandText);
   font-size: 1.25rem;
-  background-color: rgba(255, 255, 255, 1);
-  border-top: 1px solid rgba(232, 235, 252, 1);
-  border-bottom: 1px solid rgba(232, 235, 252, 1);
+  background-color: var(--brandItemBackground);
+  border-top: 1px solid var(--brandItemBorder);
+  border-bottom: 1px solid var(--brandItemBorder);
   transition: 250ms ease-in-out;
 
   @apply w-full px-10 py-6 flex flex-row items-center justify-between text-left;
@@ -102,7 +102,7 @@ button {
 
   &:hover,
   &:focus {
-    background-color: rgba(239, 241, 251, 1);
+    background-color: var(--brandLightest);
     outline: none;
     transition: 250ms ease-in-out;
 
@@ -113,8 +113,8 @@ button {
   }
 
   &.active {
-    color: rgba(248, 249, 251, 1);
-    background-color: rgba(125, 143, 232, 1);
+    color: var(--brandHoverText);
+    background-color: var(--brandDark);
     transition: 350ms ease-in-out;
 
     .icon {

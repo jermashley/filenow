@@ -94,8 +94,8 @@ section {
   margin: 0 1rem;
   padding: 3rem 0 3.5rem;
   background-color: rgba(254, 254, 254, 1);
-  border: 1px solid rgba(232, 235, 252, 1);
-  border-bottom: 8px solid rgba(125, 143, 232, 1);
+  border: 1px solid var(--brandItemBorder);
+  border-bottom: 8px solid var(--brandAccent);
   border-radius: 0.5rem;
   box-shadow:
     /* prettier-ignore */ 0 16px 16px -16px rgba(8, 18, 69, 0.1),
@@ -111,7 +111,7 @@ section {
 }
 
 h1 {
-  color: rgba(54, 57, 73, 1);
+  color: var(--brandText);
 
   @apply text-5xl text-center font-medium leading-none;
 }

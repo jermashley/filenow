@@ -109,7 +109,7 @@ section {
   padding: 1.5rem 0 0;
   overflow: hidden;
   background-color: rgba(254, 254, 254, 1);
-  border: 1px solid rgba(232, 235, 252, 1);
+  border: 1px solid var(--brandItemBorder);
   border-radius: 0.5rem;
   box-shadow:
     /* prettier-ignore */ 0 16px 16px -16px rgba(8, 18, 69, 0.1),
@@ -135,7 +135,7 @@ button {
   /* width: fit-content; */
   margin: 0 0 calc(1.5rem - 10px) 2.5rem;
   padding: 0 0 10px;
-  color: rgba(54, 57, 73, 1);
+  color: var(--brandText);
   font-weight: 600;
   font-size: 0.825rem;
   text-transform: uppercase;
