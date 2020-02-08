@@ -104,6 +104,7 @@ section {
     0 24px 64px -16px rgba(92, 112, 214, 0.1),
     0 32px 40px -16px rgba(31, 33, 46, 0.15);
   opacity: 0;
+  transition: 250ms ease-in-out;
 
   @apply mx-auto;
 
