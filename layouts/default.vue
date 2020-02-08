@@ -12,6 +12,7 @@ div {
   margin: 0;
   padding: 0;
   background-color: var(--bodyBackground);
+  transition: 250ms ease-in-out;
 }
 </style>
 
