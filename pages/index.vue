@@ -38,7 +38,7 @@ main {
   grid-template-rows: 1fr;
   grid-template-columns: 1fr;
   align-items: start;
-  padding: 2rem 0 0;
+  padding: 4rem 0 0;
 
   @apply max-w-4xl mx-auto h-full;
 
