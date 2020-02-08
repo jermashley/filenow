@@ -115,7 +115,7 @@ button {
   &.active {
     color: var(--brandHoverText);
     background-color: var(--brandDark);
-    transition: 350ms ease-in-out;
+    transition: 250ms ease-in-out;
 
     .icon {
       opacity: 1;
