@@ -34,10 +34,17 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
+    `@nuxtjs/google-analytics`,
     `@nuxtjs/eslint-module`,
     `@nuxtjs/stylelint-module`,
     `@nuxtjs/tailwindcss`,
   ],
+  /*
+   ** Google analytics module
+   */
+  googleAnalytics: {
+    id: process.env.ANALYTICS_ID,
+  },
   /*
    ** Nuxt.js modules
    */
