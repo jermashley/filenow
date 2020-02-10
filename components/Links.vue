@@ -1,7 +1,13 @@
 <template>
-  <div v-if="category">
-    <LinkButton v-for="link in category.links" :key="link.href" :link="link" />
-  </div>
+  <transition name="fade">
+    <div v-if="category">
+      <LinkButton
+        v-for="link in category.links"
+        :key="link.href"
+        :link="link"
+      />
+    </div>
+  </transition>
 </template>
 
 <script>
@@ -32,5 +38,15 @@ div {
   grid-auto-rows: max-content;
   grid-template-columns: 1fr;
   overflow-y: auto;
+}
+
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s;
+}
+
+.fade-enter,
+.fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }
 </style>
