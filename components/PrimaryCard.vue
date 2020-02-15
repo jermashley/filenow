@@ -77,7 +77,7 @@ export default {
         anime({
           targets: card,
           translateX: 0,
-          duration: 200,
+          duration: 250,
           opacity: 1,
           easing: `easeInOutQuad`,
         })

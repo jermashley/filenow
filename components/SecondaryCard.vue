@@ -77,13 +77,15 @@ export default {
           easing: `easeInOutQuad`,
         })
       } else {
-        anime({
-          targets: card,
-          translateX: resetValue,
-          duration: 225,
-          opacity: 0,
-          easing: `easeInOutQuad`,
-        })
+        setTimeout(() => {
+          anime({
+            targets: card,
+            translateX: resetValue,
+            duration: 225,
+            opacity: 0,
+            easing: `easeInOutQuad`,
+          })
+        }, 50)
       }
     },
 
