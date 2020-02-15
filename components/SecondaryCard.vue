@@ -72,7 +72,7 @@ export default {
         anime({
           targets: card,
           translateX: translateValue,
-          duration: 250,
+          duration: 225,
           opacity: 1,
           easing: `easeInOutQuad`,
         })
@@ -80,7 +80,7 @@ export default {
         anime({
           targets: card,
           translateX: resetValue,
-          duration: 250,
+          duration: 225,
           opacity: 0,
           easing: `easeInOutQuad`,
         })

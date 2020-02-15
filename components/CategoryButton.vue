@@ -52,12 +52,14 @@ export default {
       if (this.activeCategory !== this.title) {
         this.active = false
 
-        anime({
-          targets: icon,
-          rotate: 0,
-          duration: 250,
-          easing: `easeInOutQuad`,
-        })
+        setTimeout(() => {
+          anime({
+            targets: icon,
+            rotate: 0,
+            duration: 200,
+            easing: `easeInOutQuad`,
+          })
+        }, 50)
       }
     },
   },
@@ -72,12 +74,14 @@ export default {
         ? this.$store.commit(`setActiveCategory`, this.title)
         : this.$store.commit(`setActiveCategory`, null)
 
-      anime({
-        targets: icon,
-        rotate: 180,
-        duration: 250,
-        easing: `easeInOutQuad`,
-      })
+      setTimeout(() => {
+        anime({
+          targets: icon,
+          rotate: 180,
+          duration: 200,
+          easing: `easeInOutQuad`,
+        })
+      }, 50)
     },
   },
 }

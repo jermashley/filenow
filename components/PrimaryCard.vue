@@ -51,11 +51,11 @@ export default {
     setTimeout(() => {
       anime({
         targets: card,
-        duration: 750,
+        duration: 175,
         opacity: 1,
         easing: `easeInOutQuad`,
       })
-    }, 400)
+    }, 250)
   },
 
   methods: {
@@ -69,7 +69,7 @@ export default {
         anime({
           targets: card,
           translateX: translateValue,
-          duration: 275,
+          duration: 200,
           opacity: 1,
           easing: `easeInOutQuad`,
         })
@@ -77,7 +77,7 @@ export default {
         anime({
           targets: card,
           translateX: 0,
-          duration: 275,
+          duration: 200,
           opacity: 1,
           easing: `easeInOutQuad`,
         })
