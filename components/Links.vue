@@ -43,6 +43,7 @@ div {
 .fade-enter-active,
 .fade-leave-active {
   transition: opacity 0.5s;
+  transition-delay: 150ms;
 }
 
 .fade-enter,
