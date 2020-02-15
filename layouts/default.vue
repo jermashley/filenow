@@ -4,52 +4,46 @@
   </div>
 </template>
 
-<style>
-html {
-  font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
-    Roboto, 'Helvetica Neue', Arial, sans-serif;
-  font-size: 16px;
-  word-spacing: 1px;
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+<style lang="scss" scoped>
+div {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
   margin: 0;
+  padding: 0;
+  background-color: var(--bodyBackground);
+  transition: 250ms ease-in-out;
+}
+</style>
+
+<style lang="scss">
+:root {
+  /* Card translate values */
+  --primaryCardTranslate: -115%;
+  --secondaryCardTranslate: 50%;
+  --secondaryCardReset: 50%;
+
+  @screen sm {
+    --primaryCardTranslate: calc((22.5rem / 2) * -1);
+    --secondaryCardTranslate: calc((22.5rem / 2) - 48px);
+    --secondaryCardReset: 0;
+  }
+
+  /* Color Values */
+  --brandDark: rgba(32, 47, 100, 1);
+  --brandLightest: rgba(239, 241, 251, 1);
+  --brandText: rgba(54, 58, 73, 1);
+  --brandHoverText: rgba(254, 254, 254, 1);
+  --brandItemBackground: rgba(254, 254, 254, 1);
+  --brandItemBorder: rgba(239, 241, 251, 1);
+  --brandAccent: rgba(192, 32, 51, 1);
+  --bodyBackground: rgba(248, 249, 251, 1);
 }
 
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
+body {
+  -webkit-font-smoothing: subpixel-antialiased;
+  text-rendering: optimizeLegibility;
+  height: 100vh;
+  background-color: var(--bodyBackground);
 }
 </style>

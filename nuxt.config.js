@@ -1,57 +1,54 @@
-import pkg from './package'
+require(`dotenv`).config()
 
 export default {
-  mode: 'universal',
-
+  mode: `spa`,
   /*
    ** Headers of the page
    */
   head: {
-    title: pkg.name,
+    title: `FileNow.me`,
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: pkg.description }
+      { charset: `utf-8` },
+      { name: `viewport`, content: `width=device-width, initial-scale=1` },
+      {
+        hid: `description`,
+        name: `description`,
+        content: `Website for helping you get to those important legal sites you can't remember the address for.`,
+      },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }]
+    link: [{ rel: `icon`, type: `image/x-icon`, href: `/favicon.png` }],
   },
-
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: '#fff' },
-
+  loading: { color: `#7D8FE8` },
   /*
    ** Global CSS
    */
   css: [],
-
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [],
-
+  plugins: [`~/plugins/VueCookies`],
+  /*
+   ** Nuxt.js dev-modules
+   */
+  buildModules: [
+    `@nuxtjs/google-analytics`,
+    `@nuxtjs/eslint-module`,
+    `@nuxtjs/stylelint-module`,
+    `@nuxtjs/tailwindcss`,
+  ],
+  /*
+   ** Google analytics module
+   */
+  googleAnalytics: {
+    id: process.env.ANALYTICS_ID,
+  },
   /*
    ** Nuxt.js modules
    */
-  modules: [
-    // Doc: https://axios.nuxtjs.org/usage
-    '@nuxtjs/axios',
-    '@nuxtjs/pwa',
-    [
-      '@nuxtjs/google-analytics',
-      {
-        id: 'UA-137274665-2'
-      }
-    ]
-  ],
-  /*
-   ** Axios module configuration
-   */
-  axios: {
-    // See https://github.com/nuxt-community/axios-module#options
-  },
-
+  modules: [`@nuxtjs/pwa`, `@nuxtjs/dotenv`],
   /*
    ** Build configuration
    */
@@ -59,16 +56,6 @@ export default {
     /*
      ** You can extend webpack config here
      */
-    extend(config, ctx) {
-      // Run ESLint on save
-      if (ctx.isDev && ctx.isClient) {
-        config.module.rules.push({
-          enforce: 'pre',
-          test: /\.(js|vue)$/,
-          loader: 'eslint-loader',
-          exclude: /(node_modules)/
-        })
-      }
-    }
-  }
+    extend(config, ctx) {},
+  },
 }
