@@ -18,10 +18,22 @@ export default {
     ],
     link: [{ rel: `icon`, type: `image/x-icon`, href: `/favicon.png` }],
   },
+  pwa: {
+    meta: {
+      appleStatusBarStyle: `black-translucent`,
+      themeColor: `#202F64`,
+      ogHost: `https://filenow.me`,
+      ogSiteName: `FileNow.me`,
+      ogType: `website`,
+      ogTitle: `FileNow.me`,
+      ogDescription: `Website for helping you get to those important legal sites you can't remember the address for.`,
+      nativeUi: true,
+    },
+  },
   /*
    ** Customize the progress-bar color
    */
-  loading: { color: `#7D8FE8` },
+  loading: { color: `#202F64` },
   /*
    ** Global CSS
    */
