@@ -220,7 +220,7 @@ export const state = () => ({
         },
         {
           name: `BomGar`,
-          href: `https://nwsupport.tylertech.com`,
+          href: `https://jgsupport.tylertech.com/`,
         },
         {
           name: `IP Chicken`,
