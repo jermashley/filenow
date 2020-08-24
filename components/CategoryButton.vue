@@ -1,6 +1,6 @@
 <template>
   <button :class="{ active: active }" @click="toggle()">
-    <span>{{ title }}</span>
+    <span>{{ category.name }}</span>
 
     <span ref="icon" class="icon">
       <FontAwesomeIcon :icon="[`fad`, `angle-right`]" fixed-width />
@@ -27,8 +27,8 @@ export default {
   },
 
   props: {
-    title: {
-      type: String,
+    category: {
+      type: Object,
       default: null,
     },
   },
@@ -49,7 +49,7 @@ export default {
     activeCategory() {
       const icon = this.$refs.icon
 
-      if (this.activeCategory !== this.title) {
+      if (this.activeCategory !== this.category.id) {
         this.active = false
 
         setTimeout(() => {
@@ -71,7 +71,7 @@ export default {
       this.active = !this.active
 
       this.active
-        ? this.$store.commit(`setActiveCategory`, this.title)
+        ? this.$store.commit(`setActiveCategory`, this.category.id)
         : this.$store.commit(`setActiveCategory`, null)
 
       setTimeout(() => {

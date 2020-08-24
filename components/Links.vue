@@ -1,9 +1,9 @@
 <template>
   <transition name="fade">
-    <div v-if="category">
+    <div v-if="activeCategory">
       <LinkButton
-        v-for="link in category.links"
-        :key="link.href"
+        v-for="link in categories[activeCategory].links"
+        :key="link.id"
         :link="link"
       />
     </div>
@@ -19,14 +19,68 @@ export default {
     LinkButton: () => import(`~/components/LinkButton`),
   },
 
+  async fetch() {
+    this.categories = await this.$axios
+      .$post(
+        `https://api-us-east-1.graphcms.com/v2/ckcwplnre4sxd01xr930i3ilm/master`,
+        {
+          query: `{
+          links {
+            id
+            name
+            url
+            linkCategory {
+              id
+              name
+            }
+          }
+        }`,
+        }
+      )
+      .then((res) => {
+        /* eslint no-prototype-builtins: 0 */
+        const { data } = res
+        const bulkLinks = data.links
+
+        const categories = bulkLinks.reduce((result, item) => {
+          if (!result[item.linkCategory.id]) {
+            result[item.linkCategory.id] = {}
+          }
+
+          const hasLinksArray = result[item.linkCategory.id].hasOwnProperty(
+            `links`
+          )
+          const linksArray = hasLinksArray
+            ? result[item.linkCategory.id].links
+            : []
+
+          result[item.linkCategory.id] = {
+            name: item.linkCategory.name,
+            links: linksArray,
+          }
+
+          result[item.linkCategory.id].links = [
+            ...result[item.linkCategory.id].links,
+            item,
+          ]
+
+          return result
+        }, [])
+
+        return categories
+      })
+  },
+
+  data() {
+    return {
+      categories: null,
+    }
+  },
+
   computed: {
     ...mapGetters({
       activeCategory: `activeCategory`,
     }),
-
-    category() {
-      return this.$store.getters.category(this.activeCategory)
-    },
   },
 }
 </script>
