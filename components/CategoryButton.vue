@@ -49,7 +49,7 @@ export default {
     activeCategory() {
       const icon = this.$refs.icon
 
-      if (this.activeCategory !== this.category.id) {
+      if (this.activeCategory !== this.category.slug) {
         this.active = false
 
         setTimeout(() => {
@@ -64,15 +64,27 @@ export default {
     },
   },
 
+  mounted() {
+    const urlSlug = this.$route.path.replace(`/`, ``)
+    if (urlSlug === this.category.slug) {
+      this.active = !this.active ?? true
+      this.$store.commit(`setActiveCategory`, urlSlug)
+    }
+  },
+
   methods: {
     toggle() {
       const icon = this.$refs.icon
 
       this.active = !this.active
 
-      this.active
-        ? this.$store.commit(`setActiveCategory`, this.category.id)
-        : this.$store.commit(`setActiveCategory`, null)
+      if (this.active) {
+        this.$store.commit(`setActiveCategory`, this.category.slug)
+        history.pushState({}, null, this.category.slug)
+      } else {
+        this.$store.commit(`setActiveCategory`, null)
+        history.pushState({}, null, `/`)
+      }
 
       setTimeout(() => {
         anime({

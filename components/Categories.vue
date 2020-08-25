@@ -9,6 +9,8 @@
 </template>
 
 <script>
+import slugify from 'slugify'
+
 export default {
   name: `Categories`,
 
@@ -30,7 +32,19 @@ export default {
         }
       )
       .then((res) => {
-        return res.data.linkCategories
+        let categories = res.data.linkCategories
+
+        categories = categories.map((category) => {
+          const slug = slugify(category.name, { lower: true, strict: true })
+          const udpatedCategory = {
+            ...category,
+            slug,
+          }
+
+          return udpatedCategory
+        })
+
+        return categories
       })
   },
 

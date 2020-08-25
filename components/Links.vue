@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <div v-if="activeCategory">
+    <div v-if="activeCategory && categories">
       <LinkButton
         v-for="link in categories[activeCategory].links"
         :key="link.id"
@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import slugify from 'slugify'
 import { mapGetters } from 'vuex'
 export default {
   name: `Links`,
@@ -43,26 +44,24 @@ export default {
         const bulkLinks = data.links
 
         const categories = bulkLinks.reduce((result, item) => {
-          if (!result[item.linkCategory.id]) {
-            result[item.linkCategory.id] = {}
+          const categorySlug = slugify(item.linkCategory.name, {
+            lower: true,
+            strict: true,
+          })
+          if (!result[categorySlug]) {
+            result[categorySlug] = {}
           }
 
-          const hasLinksArray = result[item.linkCategory.id].hasOwnProperty(
-            `links`
-          )
-          const linksArray = hasLinksArray
-            ? result[item.linkCategory.id].links
-            : []
+          const hasLinksArray = result[categorySlug].hasOwnProperty(`links`)
+          const linksArray = hasLinksArray ? result[categorySlug].links : []
 
-          result[item.linkCategory.id] = {
+          result[categorySlug] = {
             name: item.linkCategory.name,
+            slug: categorySlug,
             links: linksArray,
           }
 
-          result[item.linkCategory.id].links = [
-            ...result[item.linkCategory.id].links,
-            item,
-          ]
+          result[categorySlug].links = [...result[categorySlug].links, item]
 
           return result
         }, [])

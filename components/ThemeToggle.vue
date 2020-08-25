@@ -39,7 +39,6 @@ export default {
   },
 
   mounted() {
-    console.log(`currentTheme: ${this.$store.getters.currentTheme}`)
     this.$store.commit(
       `setTheme`,
       this.$store.getters.currentTheme
