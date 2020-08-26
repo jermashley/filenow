@@ -7,6 +7,7 @@ export default {
    */
   head: {
     title: `FileNow.me`,
+    // script: [{ src: `http://localhost:8098` }],
     meta: [
       { charset: `utf-8` },
       { name: `viewport`, content: `width=device-width, initial-scale=1` },
@@ -60,7 +61,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [`@nuxtjs/pwa`, `@nuxtjs/dotenv`],
+  modules: [`@nuxtjs/pwa`, `@nuxtjs/dotenv`, `@nuxtjs/axios`],
   /*
    ** Build configuration
    */

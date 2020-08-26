@@ -1,6 +1,6 @@
 <template>
   <button :class="{ active: active }" @click="toggle()">
-    <span>{{ title }}</span>
+    <span>{{ category.name }}</span>
 
     <span ref="icon" class="icon">
       <FontAwesomeIcon :icon="[`fad`, `angle-right`]" fixed-width />
@@ -27,8 +27,8 @@ export default {
   },
 
   props: {
-    title: {
-      type: String,
+    category: {
+      type: Object,
       default: null,
     },
   },
@@ -49,7 +49,7 @@ export default {
     activeCategory() {
       const icon = this.$refs.icon
 
-      if (this.activeCategory !== this.title) {
+      if (this.activeCategory !== this.category.slug) {
         this.active = false
 
         setTimeout(() => {
@@ -64,15 +64,38 @@ export default {
     },
   },
 
+  mounted() {
+    const icon = this.$refs.icon
+
+    const urlSlug = this.$route.path.replace(`/`, ``)
+    if (urlSlug === this.category.slug) {
+      this.active = !this.active ?? true
+      this.$store.commit(`setActiveCategory`, urlSlug)
+
+      setTimeout(() => {
+        anime({
+          targets: icon,
+          rotate: 180,
+          duration: 200,
+          easing: `easeInOutQuad`,
+        })
+      })
+    }
+  },
+
   methods: {
     toggle() {
       const icon = this.$refs.icon
 
       this.active = !this.active
 
-      this.active
-        ? this.$store.commit(`setActiveCategory`, this.title)
-        : this.$store.commit(`setActiveCategory`, null)
+      if (this.active) {
+        this.$store.commit(`setActiveCategory`, this.category.slug)
+        history.pushState({}, null, this.category.slug)
+      } else {
+        this.$store.commit(`setActiveCategory`, null)
+        history.pushState({}, null, `/`)
+      }
 
       setTimeout(() => {
         anime({

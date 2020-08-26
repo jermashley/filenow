@@ -1,9 +1,9 @@
 <template>
   <transition name="fade">
-    <div v-if="category">
+    <div v-if="activeCategory && categories">
       <LinkButton
-        v-for="link in category.links"
-        :key="link.href"
+        v-for="link in categories[activeCategory].links"
+        :key="link.id"
         :link="link"
       />
     </div>
@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import slugify from 'slugify'
 import { mapGetters } from 'vuex'
 export default {
   name: `Links`,
@@ -19,14 +20,66 @@ export default {
     LinkButton: () => import(`~/components/LinkButton`),
   },
 
+  async fetch() {
+    this.categories = await this.$axios
+      .$post(
+        `https://api-us-east-1.graphcms.com/v2/ckcwplnre4sxd01xr930i3ilm/master`,
+        {
+          query: `{
+          links {
+            id
+            name
+            url
+            linkCategory {
+              id
+              name
+            }
+          }
+        }`,
+        }
+      )
+      .then((res) => {
+        /* eslint no-prototype-builtins: 0 */
+        const { data } = res
+        const bulkLinks = data.links
+
+        const categories = bulkLinks.reduce((result, item) => {
+          const categorySlug = slugify(item.linkCategory.name, {
+            lower: true,
+            strict: true,
+          })
+          if (!result[categorySlug]) {
+            result[categorySlug] = {}
+          }
+
+          const hasLinksArray = result[categorySlug].hasOwnProperty(`links`)
+          const linksArray = hasLinksArray ? result[categorySlug].links : []
+
+          result[categorySlug] = {
+            name: item.linkCategory.name,
+            slug: categorySlug,
+            links: linksArray,
+          }
+
+          result[categorySlug].links = [...result[categorySlug].links, item]
+
+          return result
+        }, [])
+
+        return categories
+      })
+  },
+
+  data() {
+    return {
+      categories: null,
+    }
+  },
+
   computed: {
     ...mapGetters({
       activeCategory: `activeCategory`,
     }),
-
-    category() {
-      return this.$store.getters.category(this.activeCategory)
-    },
   },
 }
 </script>

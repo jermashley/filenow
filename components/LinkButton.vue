@@ -1,5 +1,5 @@
 <template>
-  <a :href="link.href" target="_blank">
+  <a :href="link.url" target="_blank">
     <span>
       {{ link.name }}
     </span>

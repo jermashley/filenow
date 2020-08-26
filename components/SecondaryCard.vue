@@ -90,6 +90,7 @@ export default {
     },
 
     toggle() {
+      history.pushState({}, null, `/`)
       this.$store.commit(`setActiveCategory`, null)
     },
   },

@@ -22,13 +22,6 @@ export default {
     }
   },
 
-  mounted() {
-    // const urlSlug = this.$route.path.replace(`/`, ``)
-    // if (this.$route.path !== `/`) {
-    //   this.$store.commit(`setActiveCategory`, urlSlug)
-    // }
-  },
-
   methods: {
     setTranslateValue(value) {
       this.translateValue = value
