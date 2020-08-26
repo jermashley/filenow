@@ -65,10 +65,21 @@ export default {
   },
 
   mounted() {
+    const icon = this.$refs.icon
+
     const urlSlug = this.$route.path.replace(`/`, ``)
     if (urlSlug === this.category.slug) {
       this.active = !this.active ?? true
       this.$store.commit(`setActiveCategory`, urlSlug)
+
+      setTimeout(() => {
+        anime({
+          targets: icon,
+          rotate: 180,
+          duration: 200,
+          easing: `easeInOutQuad`,
+        })
+      })
     }
   },
 
