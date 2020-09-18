@@ -1,11 +1,22 @@
 <template>
   <transition name="fade">
-    <div v-if="activeCategory && categories">
+    <div v-if="activeCategory && categories[activeCategory]">
       <LinkButton
         v-for="link in categories[activeCategory].links"
         :key="link.id"
         :link="link"
       />
+    </div>
+
+    <div
+      v-if="activeCategory && !categories[activeCategory]"
+      class="no-links-found"
+    >
+      <span
+        style=" font-size: 18px; line-height: 1.25; text-align: center; opacity: 0.25;"
+      >
+        Sorry, we lost the links to this category.
+      </span>
     </div>
   </transition>
 </template>
@@ -26,7 +37,7 @@ export default {
         `https://api-us-east-1.graphcms.com/v2/ckcwplnre4sxd01xr930i3ilm/master`,
         {
           query: `{
-          links {
+          links(stage: PUBLISHED) {
             id
             name
             url
@@ -91,6 +102,10 @@ div {
   grid-auto-rows: max-content;
   grid-template-columns: 1fr;
   overflow-y: auto;
+}
+
+.no-links-found {
+  @apply w-full px-10 py-2 flex flex-row items-center justify-between;
 }
 
 .fade-enter-active,

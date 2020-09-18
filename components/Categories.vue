@@ -24,7 +24,7 @@ export default {
         `https://api-us-east-1.graphcms.com/v2/ckcwplnre4sxd01xr930i3ilm/master`,
         {
           query: `{
-            linkCategories {
+            linkCategories(stage: PUBLISHED) {
               id
               name
             }
