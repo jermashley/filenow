@@ -37,7 +37,7 @@ export default {
         `https://api-us-east-1.graphcms.com/v2/ckcwplnre4sxd01xr930i3ilm/master`,
         {
           query: `{
-          links(stage: PUBLISHED) {
+          links(stage: PUBLISHED, orderBy: name_ASC) {
             id
             name
             url
