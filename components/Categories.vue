@@ -5,6 +5,9 @@
       :key="category.id"
       :category="category"
     />
+    <CategoryButton
+      :category="{ name: `Online Dispute Resolution (Coming Soon)` }"
+    />
   </div>
 </template>
 
