@@ -1,12 +1,14 @@
 {
   "compilerOptions": {
-    "baseUrl": ".",
+    "baseUrl": "./",
     "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./*"],
-      "~~/*": ["./*"],
-      "@@/*": ["./*"]
+      "@components/*": ["components/*"],
+      "@contexts/*": ["contexts/*"],
+      "@layouts/*": ["layouts/*"],
+      "@lib/*": ["lib/*"],
+      "@stitches": ["stitches.config.js"],
+      "@styles/*": ["styles/*"],
+      "@utils/*": ["utils/*"]
     }
-  },
-  "exclude": ["node_modules", ".nuxt", "dist"]
+  }
 }

@@ -1,27 +1,42 @@
 module.exports = {
+  plugins: [`simple-import-sort`],
   root: true,
+  parserOptions: {
+    ecmaVersion: 2020,
+    sourceType: `module`,
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
+  settings: {
+    react: {
+      version: `detect`,
+    },
+  },
   env: {
     browser: true,
+    amd: true,
     node: true,
   },
-  parserOptions: {
-    parser: 'babel-eslint',
-    sourceType: 'module',
-  },
   extends: [
-    '@nuxtjs',
-    'eslint:recommended',
-    'plugin:prettier/recommended',
-    'plugin:nuxt/recommended',
-    'plugin:vue/essential',
-    'prettier',
-    'prettier/vue',
+    `eslint:recommended`,
+    `plugin:react/recommended`,
+    `plugin:jsx-a11y/recommended`,
+    `plugin:prettier/recommended`,
   ],
-  plugins: ['prettier', 'vue'],
   rules: {
-    quotes: ['error', 'backtick'],
-    'vue/component-name-in-template-casing': ['error', 'PascalCase'],
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'prettier/prettier': [`error`, {}, { usePrettierrc: true }],
+    'quotes': [`error`, `backtick`],
+    'react/prop-types': 0,
+    'react/no-children-prop': 0,
+    'react/react-in-jsx-scope': `off`,
+    'jsx-a11y/anchor-is-valid': [
+      `error`,
+      {
+        components: [`Link`],
+        specialLink: [`hrefLeft`, `hrefRight`],
+        aspects: [`invalidHref`, `preferButton`],
+      },
+    ],
   },
 }
