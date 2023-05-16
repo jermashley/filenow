@@ -47,7 +47,6 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
-    `@nuxtjs/google-analytics`,
     `@nuxtjs/eslint-module`,
     `@nuxtjs/stylelint-module`,
     `@nuxtjs/tailwindcss`,
@@ -61,7 +60,7 @@ export default {
   /*
    ** Nuxt.js modules
    */
-  modules: [`@nuxtjs/pwa`, `@nuxtjs/dotenv`, `@nuxtjs/axios`],
+  modules: [`@nuxtjs/pwa`, `@nuxtjs/dotenv`, `@nuxtjs/axios`, `@nuxtjs/google-analytics`],
   /*
    ** Build configuration
    */
