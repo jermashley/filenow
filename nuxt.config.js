@@ -50,7 +50,20 @@ export default {
     `@nuxtjs/eslint-module`,
     `@nuxtjs/stylelint-module`,
     `@nuxtjs/tailwindcss`,
+    `@nuxtjs/google-analytics`,
   ],
+  /*
+   ** Google analytics module
+   */
+  googleAnalytics: {
+    id: `${process.env.ANALYTICS_ID}`, // Use as fallback if no runtime config is provided
+  },
+  publicRuntimeConfig: {
+    googleAnalytics: {
+      id: `${process.env.ANALYTICS_ID}`,
+      checkDuplicatedScript: true,
+    }
+  },
   /*
    ** Nuxt.js modules
    */
@@ -58,11 +71,6 @@ export default {
     `@nuxtjs/pwa`,
     `@nuxtjs/dotenv`,
     `@nuxtjs/axios`,
-    [
-      `@nuxtjs/google-analytics`, {
-        id: process.env.ANALYTICS_ID,
-      }
-    ]
   ],
   /*
    ** Build configuration
