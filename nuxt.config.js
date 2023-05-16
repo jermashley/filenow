@@ -52,15 +52,18 @@ export default {
     `@nuxtjs/tailwindcss`,
   ],
   /*
-   ** Google analytics module
-   */
-  googleAnalytics: {
-    id: process.env.ANALYTICS_ID,
-  },
-  /*
    ** Nuxt.js modules
    */
-  modules: [`@nuxtjs/pwa`, `@nuxtjs/dotenv`, `@nuxtjs/axios`, `@nuxtjs/google-analytics`],
+  modules: [
+    `@nuxtjs/pwa`,
+    `@nuxtjs/dotenv`,
+    `@nuxtjs/axios`,
+    [
+      `@nuxtjs/google-analytics`, {
+        id: process.env.ANALYTICS_ID,
+      }
+    ]
+  ],
   /*
    ** Build configuration
    */
