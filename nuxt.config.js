@@ -42,7 +42,7 @@ export default {
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: [`~/plugins/VueCookies`],
+  plugins: [`~/plugins/VueCookies`, `~/plugins/VueGoogleAnalyticsTag`],
   /*
    ** Nuxt.js dev-modules
    */
@@ -53,25 +53,9 @@ export default {
     `@nuxtjs/google-analytics`,
   ],
   /*
-   ** Google analytics module
-   */
-  googleAnalytics: {
-    id: `${process.env.ANALYTICS_ID}`, // Use as fallback if no runtime config is provided
-  },
-  publicRuntimeConfig: {
-    googleAnalytics: {
-      id: `${process.env.ANALYTICS_ID}`,
-      checkDuplicatedScript: true,
-    }
-  },
-  /*
    ** Nuxt.js modules
    */
-  modules: [
-    `@nuxtjs/pwa`,
-    `@nuxtjs/dotenv`,
-    `@nuxtjs/axios`,
-  ],
+  modules: [`@nuxtjs/pwa`, `@nuxtjs/dotenv`, `@nuxtjs/axios`],
   /*
    ** Build configuration
    */
