@@ -50,7 +50,6 @@ export default {
     `@nuxtjs/eslint-module`,
     `@nuxtjs/stylelint-module`,
     `@nuxtjs/tailwindcss`,
-    `@nuxtjs/google-analytics`,
   ],
   /*
    ** Nuxt.js modules
